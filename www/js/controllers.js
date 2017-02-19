@@ -193,22 +193,9 @@ $scope.$on('$ionicView.enter', function(e) {
     console.warn('No geolocation available!')
   }
 
-console.log($scope);
 
   var phone = $stateParams.contactId;
 
-  function onClick(e) {
-
-    console.log($scope);
-
-    $scope.$apply(function () {
-            $scope.destination = this.getLatLng();
-        });
-
-    //$state.reload();
-    console.log("destination latitude : " + $scope.destination.lat);
-    console.log("destination longitude : " + $scope.destination.lng);
-  }
 
 // Fetch selected contact posittions and display them (every time the controller gets activated.)
 ContactManager.fetchDetails(phone)
@@ -221,11 +208,22 @@ ContactManager.fetchDetails(phone)
             var marker = L.marker([details.localisation[i].latitude, details.localisation[i].longitude],{icon : yellowIcon}).addTo($scope.map);
             marker.on('click', onClick).addTo($scope.map);
             marker.bindPopup("<b>Date</b><br>" + details.localisation[i].date).openPopup();
+            function onClick(e) {
+              console.log($scope);
 
+                $scope.destination = this.getLatLng();
+                $scope.$apply();
+
+              //$state.reload();
+              console.log("destination latitude : " + $scope.destination.lat);
+              console.log("destination longitude : " + $scope.destination.lng);
+            }
 
 
         }
+
       }
+
     });
 
 
