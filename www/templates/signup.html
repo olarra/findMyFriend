@@ -1,0 +1,41 @@
+<ion-view view-title="Inscription">
+  <ion-content scroll="true" padding="flase" class="login-container">
+    <section>
+      <div class="list" style="padding:0px 10px 0px 10px;">
+
+        <label class="item item-input label-form item-stacked-label roboto-light">
+          <span class="input-label roboto-light"><i class="icon ion-android-contact"></i> Nom d'utilisateur</span>
+          <input ng-model="newUser.name" class="input-form" type="text" placeholder="Choisissez un nom d'utilisateur">
+        </label>
+
+        <label class="item item-input label-form item-stacked-label roboto-light">
+          <span class="input-label roboto-light"><i class="icon ion-android-lock"></i> Mot de passe</span>
+          <input ng-model="newUser.password" class="input-form" type="password" placeholder="Choisissez un mot de passe">
+        </label>
+
+        <label class="item item-input label-form item-stacked-label roboto-light" >
+          <span class="input-label roboto-light"><i class="icon ion-android-mail"></i> Adresse email</span>
+          <input ng-model="newUser.mail" class="input-form" type="email" placeholder="username@domain.com">
+        </label>
+
+        <label class="item item-input label-form item-stacked-label roboto-light">
+          <span class="input-label"><i class="icon ion-android-call"></i> Telephone</span>
+          <input style="background-color:transparent !important;" type="text" ng-model="newUser.telephone" mask="(99) 9999.9999" placeholder="(99) 0000.0000">
+        </label>
+
+          <label class="item item-input label-form item-stacked-label roboto-light">
+            <span class="input-label"><i class="icon ion-android-calendar"></i> Date de naissence</span>
+            <input style="background-color:transparent !important;" type="date" ng-model="newUser.date">
+          </label>
+
+        <label class="item item-input label-form item-stacked-label roboto-light">
+          <span class="input-label roboto-light"><i class="icon ion-android-contacts"></i> Sexe</span>
+          <input ng-model="newUser.sex" class="input-form" type="text" placeholder="Sexe">
+        </label>
+      </div>
+      <div style="padding:0px 10px 0px 10px;">
+      <button class="button button-block bg-red" ng-click="signup()" ng-disabled="!newUser.mail || !newUser.password || !newUser.name || !newUser.date || !newUser.sex">S'inscrire</button>
+    </div>
+    </section>
+  </ion-content>
+</ion-view>

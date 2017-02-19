@@ -1,0 +1,33 @@
+<ion-view view-title="Mon profil" hide-back-button="true">
+  <ion-nav-buttons side="secondary">
+   <a class="button button-clear" ng-click="logout()">Logout</a>
+</ion-nav-buttons>
+  <ion-content class="padding">
+      <h2 ng-if="profil.user.username" class = "text-center roboto-light"><span class="ambar">Bienvenu</span><span class="red"> {{profil.user.username}}</span></h2>
+
+    <div class="card">
+      <div class="row">
+        <div class="col">
+         <img src="img/avatar.png"  height="90" width="90" class="center">
+          <h3  ng-if="profil.user.username"  class="roboto-light center-text">Information de la compte</h3>
+        </div>
+      </div>
+      <div ng-if="profil.user.username" class ="col text-center">
+        <p>Mail : {{profil.user.mail}} </p>
+        <p>Telephone :  {{profil.user.telephone}}</p>
+        <p>Date :  {{date}}</p>
+      </div>
+    </div>
+    <div class = "col" style="padding:0px 15px 0px 15px;">
+      <a class="btn icon-btn btn-success" ng-click="getProfil()"><span class="glyphicon btn-glyphicon ion-android-download img-circle text-success"></span>Recuperer information de l'utilisateur</a>
+    </div>
+  </br>
+    <div class = "col" style="padding:0px 15px 0px 15px;">
+      <a class="btn icon-btn btn-danger" ng-click="destroySession()"><span class="glyphicon btn-glyphicon ion-trash-a img-circle text-danger"></span>Supprimer token</a>
+    </div>
+  </br>
+    <div class = "col" style="padding:0px 15px 0px 15px;">
+      <a class="btn icon-btn btn-info" href="#/tab/positions"><span class="glyphicon btn-glyphicon ion-android-pin img-circle text-info"></span>Consulter et Éditer mes positions</a>
+    </div>
+  </ion-content>
+</ion-view>

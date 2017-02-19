@@ -1,0 +1,65 @@
+var app = angular.module('login.services', [ ]);
+
+
+app.factory('AuthService', function($http,API_ENDPOINT,AUTH_EVENTS) {
+
+//Variables for all the services methodes
+
+  var LOCAL_TOKEN_KEY = 'yourTokenKey';
+  var isAuthenticated = false;
+  var authToken;
+
+// Main Services
+
+ var login = function(user) {
+   console.log("trying to make a call to the sever")
+   console.log(user);
+   console.log(API_ENDPOINT);
+
+    $http.post(API_ENDPOINT.url + 'api/login',{"name":"chuy","password":"xs"})
+           .success(function(data) {
+               storeUserCredentials(data.token);
+           })
+           .error(function(err) {
+             return err;
+           });
+   };
+
+   var test = function()
+   {
+     console.log("test")
+   }
+
+
+// Local methodes for main services.
+
+   function storeUserCredentials(token) {
+    $window.localStorage.setItem(LOCAL_TOKEN_KEY, token);
+    useCredentials(token);
+  }
+
+  function loadUserCredentials() {
+    var token = window.localStorage.getItem(LOCAL_TOKEN_KEY);
+    if (token) {
+      useCredentials(token);
+    }
+  }
+
+  function useCredentials(token) {
+    isAuthenticated = true;
+    authToken = token;
+    // Set the token as header for your requests!
+    $http.defaults.headers.common.Authorization = authToken;
+  }
+
+  loadUserCredentials();
+
+  // Methodes availables for the controllers
+    return {
+     login: login,
+     test : test,
+     //logout: logout,
+     isAuthenticated: function() {return isAuthenticated;},
+   };
+
+});

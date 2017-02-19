@@ -1,0 +1,46 @@
+<ion-view view-title="Configuration" hide-back-button="true">
+
+  <ion-nav-buttons side="primary">
+      <a class="button button-clear" ng-click="previous()" ng-if="slideIndex > 0">Précedent</a>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="secondary">
+    <a class="button button-clear"  ng-click="next()" ng-if="slideIndex != 2">Suivant</a>
+    <a class="button button-clear"  ng-click="startApp()" ng-if="slideIndex == 2">Démarrer App</a>
+  </ion-nav-buttons>
+
+      <ion-slide-box on-slide-changed="slideChanged(index)">
+
+        <ion-slide></br>
+          <h3 class = "roboto-light">Agenda de contacts !</h3>
+              </br>
+              <img id="agenda" src="./img/agenda.png/">
+              </br></br>
+              <p>Permetez nous d'acceder à votre liste de contacts</p>
+              <p>On verra qui de vos amis utilise cette application</p>
+              </br>
+              <a class="button roboto-light red" ng-click="sendContacts()">Lancez Recherche</a>
+        </ion-slide>
+
+        <ion-slide></br>
+          <h3 class = "roboto-light">Accordez nous le permis de recuperer votre position GPS</h3>
+              </br></br>
+              <img id="mapa" src="./img/GPS.png/">
+              </br></br>
+              <p>On utilisera votre position</p>
+              <p>pour la transferer à vos amis</p>
+              </br>
+              <a class="button roboto-light red" ng-click="updatePosition()">Lancer GPS</a>
+        </ion-slide>
+
+        <ion-slide></br></br>
+          <h3 class="roboto-medium">Felicitations!</h3>
+          </br></br>
+          <img id="mapa" src="./img/icon_findU2.png/">
+          </br></br>
+          <p>Vous pouvez desormais</p>
+          <p>utiliser votre app Find My Friend</p>
+        </ion-slide>
+      </ion-slide-box>
+
+</ion-view>

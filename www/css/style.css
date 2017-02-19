@@ -1,0 +1,193 @@
+/* Empty. Add your own CSS if you like */
+
+.login-container {
+    height: 100%;
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(232,232,232,1) 99%); /* Chrome10-25,Safari5.1-6 */
+}
+
+.logo {
+    height: 90px;
+}
+
+.login-container > .header {
+    padding-top: 50px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.roboto-thin{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+.roboto-light{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.roboto-medium{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 5000;
+}
+
+.roboto-bold{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.ambar {
+  color : #FFBF00;
+}
+
+.red {
+  color : #DF2029;
+}
+
+
+header {
+    display:table;
+    width:100%;
+    max-width:100%;
+}
+header div {
+    display:table-row;
+    line-height:1.5em;
+    font-size:2em;
+    white-space:nowrap;
+}
+header p {
+    font-size:19px; /* Change font-size in header */
+    overflow:hidden;
+    display:table-cell;
+    vertical-align:middle;
+    width:1px;
+    table-layout:fixed;
+    padding:0 10px;
+}
+header span.spacer {
+    display:table-cell;
+}
+
+header span.spacer:after {
+    display:inline-block;
+    width:100%;
+    content:".";
+    font-size:0;
+    color:transparent;
+    height:1px;
+    background:#DF2029;
+    vertical-align:middle;
+    position:relative;
+    top:-1px;
+}
+
+
+.label-form{
+  background-color: transparent;
+  border-color : transparent;
+  border-bottom-color: #FFBF00;
+  padding : 0px 0 0px 10px !important;
+}
+
+.input-form[type="text"]{
+  color :#DF2029;
+  background-color:transparent !important;
+}
+
+.input-form[type="password"]{
+  color :#DF2029;
+  background-color:transparent !important
+}
+
+.input-form[type="email"]{
+  color :#DF2029;
+  background-color:transparent !important
+}
+
+.option  > a:link {
+  text-decoration: none;
+}
+
+
+.bg-ambar{
+  background-color: #FFBF00;
+  color: #FFFFFF;
+}
+
+.bg-ambar:hover{
+  background-color: #F89406;
+  color: #FFFFFF;
+}
+
+.bg-red{
+  background-color: #DF2029;
+  color: #FFFFFF
+}
+
+.bg-red:hover{
+  background-color: #E74C3C;
+  color:#FFFFFF;
+}
+
+input[type="date"] {
+    height: 40px !important;
+    background-color: transparent !important;
+  }
+
+.center-text {
+   text-align: center;
+	 color:  #34495e
+}
+
+.item-divider {
+    min-height: 1px !important;
+    background-color: #2980b9 ;
+}
+
+/**
+**  loadign contact overpage
+**/
+.loading {
+    height:100vh;
+    z-index:5000;
+    opacity: 0.85;
+    filter: alpha(opacity=90);
+    background: #2980b9;
+    position: relative;
+}
+
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  padding-top: 80px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+#agenda {
+  height: 27%;
+}
+
+#myMap {
+  height: 63vh;
+}
+
+.btn-glyphicon {
+    padding:8px !important;
+    background:#ffffff !important;
+    margin-right:4px !important;
+}
+.icon-btn {
+    padding: 1px 15px 3px 2px !important;
+    border-radius:50px !important;
+}

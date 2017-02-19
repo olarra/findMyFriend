@@ -1,0 +1,18 @@
+<ion-view view-title="Connectés Details" style="background-color: #ECF0F1" >
+
+  <ion-nav-buttons side="secondary">
+      <a class="button button-clear" ng-click="logout()">Logout</a>
+  </ion-nav-buttons>
+<!-- {{details}} -->
+    <ion-content padding="20">
+      <div class="card">
+        <div data-tap-disabled="true">
+          <div id="myMap" my-map=""></div>
+        </div>
+      </div>
+      <p class="roboto-light" style="font-size:14px;">Destin lat : {{destination.lat | number:4 }} longitude :  {{destination.lng | number:4}}</p>
+      <button ng-disabled="!destination" class="button button-block button-outline button-calm" ng-click="getRoute()">
+        Tracer route
+      </button>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,46 @@
+<ion-view view-title="Contacts" style="background-color: rgba(216, 212, 225, 0.44)">
+  <ion-nav-buttons side="primary">
+      <button class="button button-icon icon ion-ios-people" ng-click="updateAllContacts()"></button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="secondary">
+      <a class="button button-clear" ng-click="logout()">Logout</a>
+  </ion-nav-buttons>
+
+    <ion-content>
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Search" ng-model="search">
+        </label>
+
+        <div class="loading" ng-show='loading'>
+          <br>
+          <div style="position: relative;margin: 60% auto;">
+            <three-bounce-spinner></three-bounce-spinner>
+          </div>
+        </div>
+        <div class="item item-divider roboto-light text-center" ng-show="!loading && end" style="color:#ecf0f1;"> Vous avez {{length}} contacts :)</div>
+        <!-- Going to put the contacts here -->
+          <ion-list>
+            <div ng-repeat="item in normalized | orderBy:'name' | filter:search" ng-show="!loading && end || fetch">
+                <a class="item item-avatar item-icon-right" ng-if="item.isUsingApp" href="#/tab/mesAmis/{{item.phone_no}}">
+                  <!-- <img src="https://api.adorable.io/avatars/75/{{item.name}}">-->
+                <img src="http://tinygraphs.com/squares/{{item.name}}?theme=bythepool&numcolors=4&size=70&fmt=jpeg">
+                <h3 class="roboto-medium red">{{item.name}} <span style="color:#f1c40f">★</span></h3>
+                <p><span class="roboto-thin" style="color:#7f8c8d;">({{ item.type }}) </span>
+                  <span class="roboto-light" style="color:#34495e;">{{ item.phone_no }}</span></p>
+                  <i ng-show="item.isUsingApp" class="icon ion-eye icon-accessory " style="color:#3498db;"></i>
+              </a>
+
+              <a class="item item-avatar item-icon-right" ng-if="!item.isUsingApp" href="">
+              <!-- <img src="https://api.adorable.io/avatars/75/{{item.name}}">-->
+              <img src="http://tinygraphs.com/squares/{{item.name}}?theme=bythepool&numcolors=4&size=70&fmt=jpeg">
+              <h3 class="roboto-medium red">{{item.name}}</h3>
+              <p><span class="roboto-thin" style="color:#7f8c8d;">({{ item.type }}) </span>
+              <span class="roboto-light" style="color:#34495e;">{{ item.phone_no }}</span></p>
+              <i class="icon ion-eye-disabled icon-accessory " style="color:#95a5a6;"></i>
+            </a>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

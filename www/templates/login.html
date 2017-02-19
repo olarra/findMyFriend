@@ -1,0 +1,44 @@
+<ion-view view-title="Login" hide-nav-bar="true" cache-view="false">
+  <ion-content scroll="false">
+      <section class="login-container">
+        <div class = "col header">
+          <header>
+            <div>
+            <span class="spacer"></span>
+              <h2 class = "text-center roboto-light"><span class="ambar">Find My</span><span class="red"> Friend</span></h2>
+              <span class="spacer"></span>
+            </div>
+          </header>
+
+            <img class = "center logo" src="./img/icon_findMyFriend.png"/ >
+        </div>
+        <div class = "col">
+          <header style="padding:0px 10px 0px 10px;"><div><span class="spacer"></span><p class="roboto-light text-center red">Connectez vous</p><span class="spacer"></span></div></header>
+        </div>
+        <div class = "col">
+          <div class="list" style="padding:0px 10px 0px 10px;">
+             <label class="item item-input label-form">
+               <i class="icon ion-android-contact placeholder-icon"></i>
+               <input ng-model="user.name" type="text" placeholder="Utilisateur" class="input-form">
+             </label>
+             <label class="item item-input label-form">
+               <i class="icon ion-ios-locked placeholder-icon"></i>
+               <input ng-model="user.password" type="password" class="input-form" placeholder="Mot de passe">
+             </label>
+          </div>
+          <div style="padding:0px 10px 0px 10px;">
+              <button class="button button-block bg-ambar" ng-disabled="!user.name || !user.password" ng-click="login()">Connexion</button>
+          </div>
+        </div>
+          <div class = "col" style="padding:0px 15px 0px 15px;">
+              <span class="roboto-light red">Connexion avec :</span><img class="button button-clear" style="height:35px; vertical-align:middle;"  src="./img/facebook-button.png"/>
+          </div>
+          <div class="row text-center" style="margin:135px 0px 0px 0px;">
+              <div class="col"><strong class="option"><a class="roboto-light red" href = "#">Mot de passe Oublié?</a></strong></div>
+              <div class="col"><strong class="option"><a class="roboto-light red"href = "#/signup">S'inscrire</a></strong></div>
+            </div>
+
+        </div>
+      </section>
+  </ion-content>
+</ion-view>
